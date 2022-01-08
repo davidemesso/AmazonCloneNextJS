@@ -1,0 +1,41 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.topnav-button {
+  @apply p-2 hover:ring-2 hover:rounded-sm hover:ring-stone-300 h-12 cursor-pointer items-center flex font-semibold;
+}
+
+.subnav-button {
+  @apply whitespace-nowrap p-[2px] hover:p-[6px] h-8 cursor-pointer items-center text-center flex text-xs md:text-sm hover:border-2 hover:border-stone-300 hover:rounded-md md:font-semibold sm:p-[8px];
+}
+
+.footer-button {
+  @apply w-min whitespace-nowrap p-[2px] h-8 cursor-pointer items-center text-center flex text-xs md:text-sm hover:underline  md:font-semibold sm:p-[8px];
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+}
+
+#scrollable {
+  scroll-behavior: smooth;
+}
+
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.fade-leave {
+  opacity: 1;
+}
+
+.fade-leave.fade-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
