@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ClickableImage from './ClickableImage';
 
 class Card extends React.Component {
     constructor(props) {
@@ -12,8 +13,7 @@ class Card extends React.Component {
         return (
             <div className="dark:text-white w-full overflow-hidden mt-10 xl:mt-0 sm:w-[100%] md:w-[46%] lg:w-[48%] xl:w-[32%] bg-slate-100 dark:bg-slate-800 shadow-lg rounded-lg p-4 mx-2">
                 <h1 className="text-xl font-bold">Recommended</h1>
-                <a href={this.state.product?.detailPageURL}><img className="m-2 cursor-pointer mx-auto py-2 shadow-lg border-gray-100 dark:border-none border-2 h-[12rem] w-auto"
-                    src={this.state.product?.imageUrl} /></a>
+                <a id={this.state.product?.ASIN + "Image"} ><ClickableImage product={this.state.product}/></a>
                 <p className="whitespace-nowrap text-ellipsis font-semibold w-auto overflow-hidden">
                     {this.state.product?.title}
                 </p>
@@ -21,9 +21,9 @@ class Card extends React.Component {
                     {this.state.product?.price}
                 </p>
                 <p>
-                    {this.state.product?.isPrimeEligible ? "Prime" : "Non prime"}
+                    {this.state.product?.isPrimeEligible === "1" ? "Prime: Si" : "Prime: No"}
                 </p>
-                <a href={this.state.product?.detailPageURL}><p className="text-blue-500 font-semibold text-right cursor-pointer">See more...</p></a>
+                <p onClick={() => {document.getElementById(this.state.product?.ASIN + "Image").children[0].click()}} className="text-blue-500 font-semibold text-right cursor-pointer">See more...</p>
             </div>
         )
     }
