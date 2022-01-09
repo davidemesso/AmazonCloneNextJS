@@ -8,8 +8,6 @@ import { useRouter } from "next/router";
 function TopNav({ value: dark, handler: setDark }) {
     const { data: session } = useSession();
     const router = useRouter();
-    if (session)
-        console.log(session.user);
 
     return (
         <div className="fixed left-0 top-0 bg-[#232f3e] h-10 flex w-full justify-between items-center text-white py-8 px-4">
